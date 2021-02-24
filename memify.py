@@ -32,14 +32,14 @@ async def ultd(event):
     ureply = await event.get_reply_message()
     msg = event.pattern_match.group(1)
     if not (ureply and (ureply.media)):
-        xx = await eor(event, "`Reply to any media`")
+        xx = await eor(event, "**Reply to any media.**")
         return
     if not msg:
-        xx = await eor(event, "`Give me something text to write 😑`")
+        xx = await eor(event, "**Give me some text to memify.😑**")
         return
     ultt = await ureply.download_media()
     if ultt.endswith((".tgs")):
-        xx = await eor(event, "`Ooo Animated Sticker 👀...`")
+        xx = await eor(event, "**OwO Animated Sticker 👀...**")
         cmd = ["lottie_convert.py", ultt, "ult.png"]
         file = "ult.png"
         process = await asyncio.create_subprocess_exec(
@@ -49,12 +49,12 @@ async def ultd(event):
         stderr.decode().strip()
         stdout.decode().strip()
     elif ultt.endswith((".webp",".png")):
-        xx = await eor(event, "`Processing`")
+        xx = await eor(event, "`Processing...`")
         im = Image.open(ultt)
         im.save("ult.png", format="PNG", optimize=True)
         file = "ult.png"
     else:
-        xx = await eor(event, "`Processing`")
+        xx = await eor(event, "`Processing...`")
         img = cv2.VideoCapture(ultt)
         heh,lol = img.read()
         cv2.imwrite("ult.png",lol)
@@ -184,14 +184,14 @@ async def ultd(event):
     ureply = await event.get_reply_message()
     msg = event.pattern_match.group(1)
     if not (ureply and (ureply.media)):
-        xx = await eor(event, "`Reply to any media`")
+        xx = await eor(event, "**Reply to any media.**")
         return
     if not msg:
-        xx = await eor(event, "`Give me something text to write 😑`")
+        xx = await eor(event, "**Give me some text to memify.😑**")
         return
     ultt = await ureply.download_media()
     if ultt.endswith((".tgs")):
-        xx = await eor(event, "`Ooo Animated Sticker 👀...`")
+        xx = await eor(event, "**OwO Animated Sticker 👀...**")
         cmd = ["lottie_convert.py", ultt, "ult.png"]
         file = "ult.png"
         process = await asyncio.create_subprocess_exec(
@@ -201,12 +201,12 @@ async def ultd(event):
         stderr.decode().strip()
         stdout.decode().strip()
     elif ultt.endswith((".webp",".png")):
-        xx = await eor(event, "`Processing`")
+        xx = await eor(event, "`Processing...`")
         im = Image.open(ultt)
         im.save("ult.png", format="PNG", optimize=True)
         file = "ult.png"
     else:
-        xx = await eor(event, "`Processing`")
+        xx = await eor(event, "`Processing...`")
         img = cv2.VideoCapture(ultt)
         heh,lol = img.read()
         cv2.imwrite("ult.png",lol)
