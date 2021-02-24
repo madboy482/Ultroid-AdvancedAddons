@@ -2,6 +2,7 @@
 
 \nCode by @maxprogrammer007 (orginally by @H1M4N5HU0P )for @theultroid
 # Ported for Ultroid < https://github.com/TeamUltroid/Ultroid >   
+# ULTROID-ADVANCED
 
 type .iloveyou to see the love.
 """
@@ -106,4 +107,3 @@ async def _(event):
       😘😘😘😘😘😘
             😘😘😘😘""")
 
-# ULTROID-ADVANCED
