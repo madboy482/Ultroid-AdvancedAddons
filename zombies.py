@@ -48,14 +48,14 @@ async def rm_deletedacc(show):
     del_u = 0
     del_status = "`No deleted accounts found, Group is clean`"
     if con != "clean":
-        eh = await eor(show, "`Searching for ghost/deleted/zombie accounts...`")
+        eh = await eor(show, "**Searching for ghost/deleted/zombie accounts...**")
         async for user in ultroid_bot.iter_participants(show.chat_id):
             if user.deleted:
                 del_u += 1
                 await sleep(1)
         if del_u > 0:
-            del_status = f"`Found` {del_u} `ghost/deleted/zombie account(s) in this group,\
-            \nClean them by using` `zombies clean`"
+            del_status = f"**Search Completed without any errors✅✅\nFound** {del_u} **ghost/deleted/zombie account(s) in this group,\
+            \nClean them by using** `zombies clean`.✅✅"
         await eh.edit(del_status)
         return
     chat = await show.get_chat()
@@ -63,9 +63,9 @@ async def rm_deletedacc(show):
     creator = chat.creator
     # Well
     if not admin and not creator:
-        await eor(show, "`I am not an admin here!`")
+        await eor(show, "You're __not an admin__ in this chat, Nub Nibba!!!**")
         return
-    ehh = await eor(show, "`Deleting deleted accounts...`")
+    ehh = await eor(show, "__Deleting deleted accounts...__")
     del_u = 0
     del_a = 0
     async for user in ultroid_bot.iter_participants(show.chat_id):
@@ -75,7 +75,7 @@ async def rm_deletedacc(show):
                     EditBannedRequest(show.chat_id, user.id, BANNED_RIGHTS)
                 )
             except ChatAdminRequiredError:
-                await eh.edit("`I don't have ban rights in this group`")
+                await eh.edit("**You don't have __Ban Users permission__ in this chat!!!**")
                 return
             except UserAdminInvalidError:
                 del_u -= 1
@@ -87,7 +87,7 @@ async def rm_deletedacc(show):
                     EditBannedRequest(show.chat_id, user.id, BANNED_RIGHTS)
                 )
             except ChatAdminRequiredError:
-                await eh.edit("`I don't have ban rights in this group`")
+                await eh.edit("**You don't have __Ban Users permission__ in this chat!!!**")
                 return
             except UserAdminInvalidError:
                 del_u -= 1
@@ -95,10 +95,10 @@ async def rm_deletedacc(show):
             await ultroid_bot(EditBannedRequest(show.chat_id, user.id, UNBAN_RIGHTS))
             del_u += 1
     if del_u > 0:
-        del_status = f"Cleaned **{del_u}** deleted account(s)"
+        del_status = f"**Yeah, Mission Successful✅✅\nCleaned __{del_u}__ deleted account(s) from the chat.**"
     if del_a > 0:
-        del_status = f"Cleaned **{del_u}** deleted account(s) \
-        \n**{del_a}** deleted admin accounts are not removed"
+        del_status = f"**Yeah, Mission Successful✅✅\nCleaned __{del_u}__ deleted account(s) from the chat.** \
+        \n**__{del_a}__ Deleted __ADMIN__ accounts are not removed!!!**"
     await ehh.edit(del_status)
     await sleep(2)
     await show.delete()
