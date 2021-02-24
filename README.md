@@ -1,4 +1,4 @@
-# UltroidAddons
+# Ultroid-AdvancedAddons
 Plugins repository for [@TheUltroid](https://github.com/TeamUltroid/Ultroid).
 
 ## Updated some plugs for [This Repo](https://github.com/madboy482/Ultroid-Advanced).
