@@ -56,7 +56,7 @@ async def _(event):
     if response_api:
         await eor(event, "Shortened url==> {} for the given url==> {}.".format(response_api, input_str))
     else:
-        await eor(event, "something w3nt wrong. please try again later.")
+        await eor(event, "Something w3nt wrong.⚠️ Please try again later.⚠️⚠️")
 
                  
 @ultroid_cmd(pattern="decide$")
@@ -87,7 +87,7 @@ async def gifs(ult):
 async def vtog(ult):
     reply = await ult.get_reply_message()
     if reply is None:
-        return await ult.edit("`Reply to any Video`")
+        return await ult.edit("`Reply to any Video!!`")
     xx = await eor(ult, "`Processing Takes Time...`")
     lol = await ultroid_bot.download_media(reply.media)
     file_name = "ultroid.gif"
