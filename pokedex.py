@@ -27,7 +27,7 @@ from . import *
 async def pokedex(event):
     pokemon = event.pattern_match.group(1)
     if not pokemon:
-        await eor(event, "`Give a Pokemon Name`")
+        await eor(event, "`Give a Valid Pokemon Name!!!`")
         return
     xx = await eor(event, "`Booting up the pokedex.......`")
     move = requests.get(f'https://pokeapi.co/api/v2/pokemon/{pokemon}')
@@ -39,7 +39,7 @@ async def pokedex(event):
     try:
         name=a['name']
     except:
-        await eor(event, "`Be sure To give correct Name`")
+        await eor(event, "`Be sure To give correct Name!!!`")
         return
     typ=a['type']
     species=a['species']
@@ -80,25 +80,26 @@ async def pokedex(event):
 
     cap=f'''
 
-**NAME** : `{name}`
-**TYPE** : `{typ}`
-**SPECIES** : `{species}`
-**Evolution Line** : `{line}`
-**Evolution Stage** : `{esatge}`
-**Generation** : `{gen}`
-**ABILITIES** : `{abilities}`
-**WEAKNESSES** :`{weaknesses}` 
-**HEIGHT** : `{height}`
-**WEIGHT** : `{weight}`
+✥ **NAME** : `{name}`
+✥ **TYPE** : `{typ}`
+✥ **SPECIES** : `{species}`
+✥ **Evolution Line** : `{line}`
+✥ **Evolution Stage** : `{esatge}`
+✥ **Generation** : `{gen}`
+✥ **ABILITIES** : `{abilities}`
+✥ **WEAKNESSES** :`{weaknesses}` 
+✥ **HEIGHT** : `{height}`
+✥ **WEIGHT** : `{weight}`
 
     **Stats**                               **Moves**
-**Hp**      : `{Stats['hp']}`               `(1){move1}`
-**Attack**  : `{Stats['attack']}`           `(2){move2}`   
-**Defense** : `{Stats['defense']}`          `(3){move3}`   
-**Sp_atk**  : `{Stats['sp_atk']}`           `(4){move4}`
-**Sp_def**  : `{Stats['sp_def']}`           `(5){move5}`
-**Speed**   : `{Stats['speed']}`            `(6){move6}`
-**Total**   : `{Stats['total']}`            `(7){move7}`
+➥ **Hp**      : `{Stats['hp']}`        |   `(1){move1}`
+➥ **Attack**  : `{Stats['attack']}`    |   `(2){move2}`   
+➥ **Defense** : `{Stats['defense']}`   |   `(3){move3}`   
+➥ **Sp_atk**  : `{Stats['sp_atk']}`    |   `(4){move4}`
+➥ **Sp_def**  : `{Stats['sp_def']}`    |   `(5){move5}`
+➥ **Speed**   : `{Stats['speed']}`     |   `(6){move6}`
+➥ **Total**   : `{Stats['total']}`     |   `(7){move7}`
+
 **DESCRIPTION** : `{description}`
   '''
     await ultroid_bot.send_file(event.chat_id, lst, caption=cap)
@@ -108,7 +109,7 @@ async def pokedex(event):
 async def pokedex(event):
     pokename=event.pattern_match.group(1)
     if not pokename:
-        await eor(event, "`Give A Pokemon name`")
+        await eor(event, "`Give A Valid Pokemon name!!!`")
         return
     rw = f"https://api.pokemontcg.io/v1/cards?name={pokename}"
     r = requests.get(rw)
@@ -118,7 +119,7 @@ async def pokedex(event):
         await event.client.send_file(await event.client.get_input_entity(event.chat_id), o)
         await event.delete()
     except:
-        await eor(event, "`Be sure To give correct Name`")
+        await eor(event, "`Be sure To give correct Name!!!`")
         return
 
 HELP.update({f"{__name__.split('.')[1]}": f"{__doc__.format(i=Var.HNDLR)}"})
