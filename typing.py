@@ -21,7 +21,7 @@ from . import *
 async def _(event):
     input_str = event.pattern_match.group(1)
     if not input_str:
-        return await eor(event,'Give me something to type !')
+        return await eor(event,'**Give me something to type!!!**')
     shiiinabot = "\u2060"
     for i in range(601):
         shiiinabot += "\u2060"
